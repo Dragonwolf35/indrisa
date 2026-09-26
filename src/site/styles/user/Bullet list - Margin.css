@@ -9,5 +9,6 @@ body div.el-p:has(+ div.el-ul) p {
 body div.el-p + div.el-ol ol,
 body div.el-p + div.el-ul ul.has-list-bullet {
     margin-top: 0px !important;
+    margin-bottom: 0px !important;
     margin-block-start: 0px !important;
 }

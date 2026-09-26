@@ -1,13 +1,260 @@
-body {
-    /***
-      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+/* ==========================================
+   COLOR PALETTE: AGED PARCHMENT (REVISED)
+   ========================================== */
+
+body.theme-light {
+    /* 1. PARCHMENT PALETTE */
+    --my-color-A: #EBE0D1; 
+    --my-color-B: #DFCEB7; 
+    
+    /* Slightly lighter, warmer paper tones */
+    --bg-main: #F4ECE1;         
+    --bg-secondary: #EBE0D1;    
+    --bg-alt: #E3D5C1;          
+    
+    /* Reverted to your original, nicer golden-brown */
+    --border-main: #B89456;     
+    --border-light: #D4C0A1;    
+    --faint-color: #C2A985;     
+
+    /* 2. CORE OBSIDIAN MAPPING */
+    --background-primary: var(--bg-main) !important;
+    --background-secondary: var(--bg-secondary) !important;
+    --background-secondary-alt: var(--bg-alt) !important;
+    --workspace-background: var(--bg-main) !important;
+    --setting-items-background: var(--bg-alt);
+    --menu-background: var(--bg-secondary);
+    --scrollbar-active-thumb-bg: rgba(184, 148, 86, 0.45) !important;
+    --scrollbar-thumb-bg: rgba(184, 148, 86, 0.3) !important;
+    
+    --nav-item-color: #33281E !important; 
+    
+    /* FIX 1: Explicit Navigation Hover and Active Backgrounds */
+    --nav-item-background-hover: rgba(184, 148, 86, 0.25) !important;
+    --nav-item-background-active: rgba(184, 148, 86, 0.45) !important;
+    
+    --background-modifier-form-field: var(--my-color-A) !important;
+    --background-modifier-hover: var(--my-color-A);
+    --dropdown-background: var(--bg-main);
+    --dropdown-background-hover: var(--border-light);
+    --interactive-normal: var(--bg-main);
+    --interactive-hover: var(--bg-alt) !important;
+    --code-background: var(--bg-alt);
+    --modern-background-secondary: var(--my-color-A);
+    
+    --border-color: var(--border-light);
+    --background-modifier-border: var(--border-main);
+    --background-modifier-border-focus: var(--bg-secondary);
+    --background-modifier-border-hover: var(--border-light);
+    --text-faint: var(--faint-color) !important;
+
+    /* 3. ACCENT COLORS */
+    --interactive-accent: var(--border-main) !important; 
+    --interactive-accent-hover: #9E7D46 !important; 
+    --text-accent: var(--border-main) !important;
+    --text-accent-hover: #9E7D46 !important;
+    --text-selection: rgba(184, 148, 86, 0.3) !important;
 }
+
+/* A softer, elegant highlight rather than a solid block of dark brown */
+.nav-folder-title {
+    background-color: rgba(184, 148, 86, 0.3) !important; 
+    color: #33281E !important; 
+    border: 1px solid rgba(184, 148, 86, 0.4); 
+    border-radius: 4px; 
+    margin-bottom: 2px;
+}
+
+.nav-folder-title:hover {
+    background-color: rgba(184, 148, 86, 0.45) !important;
+}
+
+/* --- INTERACTIVE STATES (HOVER & ACTIVE) --- */
+.theme-light .nav-file-title:hover,
+.theme-light .nav-folder-title:hover,
+.theme-light .tree-item-self:hover,
+.theme-light .search-result-file-match:hover,
+.theme-light .suggestion-item.is-selected, 
+.theme-light .suggestion-item:hover,
+.theme-light .vertical-tab-nav-item:hover,
+.theme-light .vertical-tab-nav-item.is-active,
+.theme-light .menu-item:hover,
+.theme-light .menu-item.is-selected,
+.theme-light .menu-item.has-active-submenu {
+    background-color: #DFCEB7 !important;
+    color: black !important;
+}
+
+body div#vg-graph {
+    background-color: var(--bg-main) !important;
+}
+
+body div#vg-heat {
+    background-color: var(--bg-secondary) !important;
+}
+
+body aside#vg-sidebar {
+    background-color: var(--bg-alt) !important;
+}
+
+body input#vg-q,
+body button#vg-tabgroups.tab,
+body button#vg-tabnote.tab,
+body span#vg-dim.dimseg.dimfull button,
+body button#vg-allon,
+body button#vg-alloff,
+body button#vg-refresh,
+body button#vg-png,
+body button#vg-dbg {
+    background-color: var(--bg-secondary) !important;
+}
+
+body button#vg-tabgroups.tab,
+body button#vg-tabnote.tab{
+  border-bottom-color: var(--border-main) !important;
+}
+
+body span#vg-dim.dimseg.dimfull button {
+  border-color: var(--border-main) !important;
+  color: black
+}
+
+body span#vg-dim.dimseg.dimfull button[aria-pressed="true"] {
+  background-color: var(--bg-alt) !important;
+  font-weight: bolder;
+}
+
+body button.lg:hover,
+body button.lg[data-hl="on"]{
+  background-color:rgba(184, 148, 86, 0.25) !important;
+  box-shadow: inset 2px 0 0 0 var(--border-main) !important;
+  border-color: var(--border-main) !important;
+}
+
+/* Base border color for the legend buttons */
+body div#vg-legend button.lg.bar,
+body div#vg-legend span.only {
+    border-color: var(--border-main) !important;
+}
+
+/* Default state */
+body div#vg-legend button.lg.bar,
+body div#vg-legend span.only{
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-main) !important;
+}
+
+/* Hover and Toggled (On) state */
+body div#vg-legend button.lg.bar:hover,
+body div#vg-legend button.lg.bar[data-hl="on"],
+body div#vg-legend span.only:hover,
+body div#vg-legend span.only[data-hl="on"]{
+    background-color: rgba(184, 148, 86, 0.25) !important;
+    box-shadow: inset 2px 0 0 0 var(--border-main) !important;
+}
+
+/* Focus state */
+body div#vg-legend button.lg.bar:focus {
+    background-color: rgba(184, 148, 86, 0.45) !important;
+}
+
+body div#vg-heatsrc button {
+   background-color: var(--bg-main) !important;
+   border-color: var(--border-main) !important;
+}
+
+body div#vg-heatsrc button[aria-pressed="true"] {
+   color: black !important;
+   font-weight: bold;
+   background-color: rgba(184, 148, 86, 0.25) !important;
+}
+
+body div#vg-heatsrc {
+   border-color: var(--border-main) !important;
+}
+
+body div#vg-mob button{
+   border-color: var(--border-main) !important;
+   background-color: var(--bg-main) !important;
+  color: black !important;
+}
+
+body div#vg-recent button{
+   border-color: var(--border-main) !important;
+   background-color: var(--bg-main) !important;
+   color: black !important;
+}
+
+body div#vg-recent span{
+  color: black !important;
+}
+
+/* Hover and Toggled (On) state */
+body div#vg-recent button[aria-pressed="true"] {
+    background-color: rgba(184, 148, 86, 0.25) !important;
+}
+
+body button#vg-compact{
+   border-color: var(--border-main) !important;
+   background-color: var(--bg-main) !important;
+  color: black !important;
+}
+
+/* Hover and Toggled (On) state */
+body button#vg-compact[aria-pressed="true"] {
+    background-color: rgba(184, 148, 86, 0.25) !important;
+}
+
+body div#vg-rangebox input,
+body div#vg-rangebox button{
+   border-color: var(--border-main) !important;
+   background-color: var(--bg-main) !important;
+   color: black !important;
+}
+
+body div#vg-cam button{
+   border-color: var(--border-main) !important;
+   background-color: var(--bg-main) !important;
+   color: black !important;
+}
+
+body div#vg-cam span{
+  color: black !important;
+}
+
+/* Hover and Toggled (On) state */
+body div#vg-cam button[aria-pressed="true"] {
+    background-color: rgba(184, 148, 86, 0.25) !important;
+}
+
+body button#vg-ov{
+   background-color: var(--bg-main) !important;
+   border-color: var(--border-main) !important;
+   outline-color: var(--border-main) !important;
+   box-shadow: var(--border-main) 0 0 0 2px !important
+}
+
+body div#vg-app.vault-graph {
+    --accent: var(--border-main) !important;
+    --edge-hi: var(--border-main) !important;
+}
+
+body div.tools button,
+body div.mini.dimall button,
+body input#vg-q{
+  border-color: var(--border-main) !important;
+}
+
+body div.actions button,
+body a.open,
+body div#vg-detail button{
+  background: var(--bg-main) !important;
+  color: black !important;
+  border: 1px solid !important;
+    border-color: var(--border-main) !important;
+}
+
+body div#vg-detail li button {
+  margin: 5px 5px 5px 5px !important;
+}
+

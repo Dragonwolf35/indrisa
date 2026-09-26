@@ -1,25 +1,23 @@
-/* 1. Ensure the parent container creates a safe zone for our background */
-.workspace-leaf-content[data-type="markdown"] .view-content,
-.dg-page-content {
-    position: relative !important;
-    background-color: #F4ECE1 !important; /* Using the exact hex to bypass web variable issues */
-    z-index: 1;
+/* 1. BASE BACKGROUND COLOR (The bottom-most layer) */
+body {
+    background-color: #F4ECE1 !important;
+    position: relative;
 }
 
-/* 2. Strip the default backgrounds from the inner text layers so they are clear */
-.cm-editor, 
-.cm-scroller, 
-.markdown-preview-view, 
-.markdown-preview-sizer {
+/* 2. CLEAR INNER LAYERS (Making the text containers transparent so the pattern shows through) */
+.app, .app-container, .workspace, .workspace-split, .workspace-leaf, 
+.workspace-leaf-content, .view-content, .markdown-reading-view, 
+.markdown-preview-view, .publish-renderer, .dg-page-content, .page, main,
+.cm-editor, .cm-scroller, .markdown-preview-sizer {
     background-color: transparent !important;
     background-image: none !important;
 }
 
-/* 3. Create the "Ghost Layer" behind the text */
-.workspace-leaf-content[data-type="markdown"] .view-content::before,
-.dg-page-content::before {
+/* 3. THE HONEYCOMB GHOST LAYER (Sitting directly on top of the base background) */
+body::before,
+.workspace-leaf-content[data-type="markdown"] .view-content::before {
     content: "";
-    position: absolute;
+    position: fixed; 
     inset: 0; 
     z-index: -1; 
     pointer-events: none; 
@@ -29,15 +27,27 @@
     background-size: 40px auto;
     background-repeat: repeat;
     
-    /* 
-       THE DISPERSION MASK 
-       Leaves the edges solid, patches out the middle, and clears the center completely.
-    */
+    /* The Dispersion Mask */
     -webkit-mask-image: 
+        radial-gradient(circle at center, transparent 70%, black 95%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.5 -0.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    mask-image: 
         radial-gradient(circle at center, transparent 70%, black 95%),
         url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.5 -0.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     
     -webkit-mask-size: 100% 100%, 200px 200px;
+    mask-size: 100% 100%, 200px 200px;
+    
     -webkit-mask-repeat: no-repeat, repeat;
+    mask-repeat: no-repeat, repeat;
+    
     -webkit-mask-composite: source-in; 
+    mask-composite: intersect;
+}
+
+/* 4. TABLE CELL FIX */
+.cm-table-widget .cm-scroller,
+.markdown-rendered table .cm-scroller {
+    background-image: none !important;
+    background-color: transparent !important;
 }

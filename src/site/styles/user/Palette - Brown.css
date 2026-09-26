@@ -2,9 +2,11 @@
    COLOR PALETTE: AGED PARCHMENT (REVISED)
    ========================================== */
 
-body.theme-light {
+:root,
+body.theme-light,
+body[data-theme="light"] {
     /* 1. PARCHMENT PALETTE */
-    --my-color-A: #EBE0D1; 
+    --my-color-A: #EBE0D1;
     --my-color-B: #DFCEB7; 
     
     /* Slightly lighter, warmer paper tones */

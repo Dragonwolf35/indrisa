@@ -1,0 +1,60 @@
+/* Custom colors for specific wikilinks */
+
+.theme-dark span.wikilink-normal .internal-link {
+	color: #BCCAD8 !important; /* Slashing Dark*/
+	text-decoration: underline;
+}
+.theme-light span.wikilink-normal .internal-link {
+	color: #412F2F !important; /* Slashing Light*/
+	text-decoration: underline;
+}
+
+span.wikilink-acid .internal-link {
+	color: #80B000 !important; /* Acid */
+	text-decoration: underline;
+}
+
+span.wikilink-cold .internal-link {
+	color: #3399CC !important; /* Cold */
+	text-decoration: underline;
+}
+
+span.wikilink-fire .internal-link {
+	color: #EB5400 !important; /* Fire */
+	text-decoration: underline;
+}
+
+span.wikilink-force .internal-link {
+	color: #CC3333 !important; /* Force */
+	text-decoration: underline;
+}
+
+span.wikilink-lightning .internal-link {
+	color: #3366CC !important; /* Lightning */
+	text-decoration: underline;
+}
+
+span.wikilink-necrotic .internal-link {
+	color: #40B050 !important; /* Necrotic */
+	text-decoration: underline;
+}
+
+span.wikilink-poison .internal-link {
+	color: #44BB00 !important; /* Poison */
+	text-decoration: underline;
+}
+
+span.wikilink-psychic .internal-link {
+	color: #CC77AA !important; /* Psychic */
+	text-decoration: underline;
+}
+
+span.wikilink-radiant .internal-link {
+	color: #CCAA00 !important; /* Radiant */
+	text-decoration: underline;
+}
+
+span.wikilink-thunder .internal-link {
+	color: #8844BB !important; /* Thunder */
+	text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+/* Applies to any image where the alt text contains "embed" */
+img[alt*="embed"] {
+    float: left !important; 
+    width: 204px !important;
+    height: 204px !important;
+    object-fit: cover !important; 
+    margin: 14px 13px 5px 13px !important; 
+    
+    /* Your custom hardcoded border */
+    border: 3px solid var( --border-main) !important; 
+    border-radius: 4px !important; /* Kept the rounded corners, set to 0 if you want sharp squares */
+    
+    /* Structural fixes for equal borders and no invisible gaps */
+    box-sizing: border-box !important; 
+    display: block !important; 
+}

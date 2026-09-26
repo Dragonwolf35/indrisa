@@ -1,0 +1,46 @@
+/* ==========================================
+   TYPOGRAPHY & FONTS
+   ========================================== */
+
+/* 1. Reading Mode Default Font */
+.markdown-rendered {
+    font-family: "Book Antiqua", serif !important;
+}
+
+/* 2. Source / Editing Mode Default Font */
+.cm-content, 
+.cm-editor {
+    font-family: "Times New Roman" !important;
+}
+
+/* 3. File Titles (Inline Title & Pane Header) */
+.inline-title, 
+.view-header-title {
+    font-family: "Mrs Eaves Small Caps" !important;
+}
+
+/* 4. Headings (H1 through H6) */
+h1, h2, h3, h4, h5, h6, 
+.markdown-rendered h1, .markdown-rendered h2, 
+.markdown-rendered h3, .markdown-rendered h4, 
+.markdown-rendered h5, .markdown-rendered h6 {
+    font-family: "Mrs Eaves Small Caps", "Book Antiqua", serif !important;
+}
+
+/* 5. Wikilinks */
+.internal-link {
+    font-family: "Rosario", sans-serif !important;
+}
+
+/* 1. Target the actual text content spans inside the navigation tree */
+.nav-folder-title-content,
+.nav-file-title-content {
+    font-family: "Rosario", sans-serif !important;
+}
+
+.nav-file.is-active > .nav-file-title,
+.nav-file.is-active > .nav-file-title *,
+.nav-file-title.is-active,
+.nav-file-title.is-active * {
+    font-weight: 700 !important;
+}

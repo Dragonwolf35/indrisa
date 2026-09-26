@@ -1,0 +1,86 @@
+/* =========================================================
+   RPG QUOTE CALLOUT & PORTRAITS
+========================================================= */
+
+/* 1. The Main Dialog Box */
+body .callout[data-callout="quote"] {
+    position: relative !important;
+    margin: 32px 0 16px 0 !important; 
+    padding: 8px 8px 0px 8px !important;
+    
+    background-color: transparent !important;
+    border: 2px solid #8C7355 !important;
+    border-radius: 0 !important; 
+    overflow: visible !important; 
+    
+    /* THE FIX: Swapped 'block' for 'flow-root' so it respects floated boundaries */
+    display: flow-root !important; 
+}
+
+body .callout[data-callout="quote"] .callout-icon {
+    display: none !important;
+}
+
+/* 2. The Connected Nameplate Tab */
+body .callout[data-callout="quote"] .callout-title {
+    position: absolute !important;
+    top: -16px !important; 
+    left: 16px !important; 
+    
+    background-color: var(--background-primary) !important; 
+    border: 2px solid #8C7355 !important;
+    border-bottom: 2px solid var(--background-primary) !important; 
+    
+    padding: 2px 12px !important;
+    border-radius: 0 !important;
+    
+    font-family: "Mrs Eaves Small Caps", "Book Antiqua", serif !important;
+    font-size: 1.1em !important;
+    font-weight: bold !important;
+    color: #4A3A2C !important;
+    letter-spacing: 1px !important;
+}
+
+/* 2.5 Hardcode Wikilink Color to match the Tab */
+body .callout[data-callout="quote"] .callout-title .internal-link {
+    color: #4A3A2C !important; 
+    text-decoration: none !important;
+    font-weight: inherit !important;
+    font-family: inherit !important;
+    background: none !important;
+}
+
+/* 3. The Quote Text */
+body .callout[data-callout="quote"] .callout-content {
+    font-family: "Book Antiqua", serif !important;
+    font-style: italic !important;
+    font-size: 1.05em !important;
+    line-height: 1.6 !important;
+    color: #33281E !important;
+}
+
+body .callout[data-callout="quote"] .callout-content p {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* 4. Square Portrait Frame Fix */
+/* This safely targets and floats the invisible Obsidian wrapper span */
+body .callout[data-callout="quote"] .callout-content span:has(img[alt*="pic"]) {
+    float: left !important;
+    display: block !important;
+    margin: 28px 16px 8px 0 !important; /* Pushes text to the right and down slightly to align */
+}
+
+/* Specific styling just for the image itself */
+body .callout[data-callout="quote"] .callout-content img[alt*="pic"] {
+    display: block !important;
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: cover !important; 
+    padding: 0px !important;     border: 2px solid #8C7355 !important;
+    border-radius: 0 !important;
+    background-color: rgba(184, 148, 86, 0.15) !important;
+    filter: sepia(0.3) contrast(1.1) !important; 
+    margin: 0 !important; /* Zeros out inner margin so wrapper handles the spacing */
+}

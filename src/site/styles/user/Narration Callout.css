@@ -1,0 +1,70 @@
+/* =========================================================
+   NARRATION CALLOUT - THE THEATRICAL STAGE (DROP CAP)
+========================================================= */
+
+body .callout[data-callout="narration"] {
+    --callout-icon: none; 
+    
+    /* Transparent to blend with the page */
+    background-color: transparent !important;
+    
+    /* Elegant double lines on top and bottom only */
+    border: none !important;
+    border-top: 3px double rgba(184, 148, 86, 0.5) !important;
+    border-bottom: 3px double rgba(184, 148, 86, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    
+    margin: 32px 0 !important;
+    padding: 24px 16px !important;
+}
+
+/* Hide the icon container */
+body .callout[data-callout="narration"] .callout-icon {
+    display: none !important;
+}
+
+/* Title: Styled as a centered, muted stage direction */
+body .callout[data-callout="narration"] .callout-title {
+    display: flex;
+    justify-content: center;
+    font-family: "Mrs Eaves Small Caps", "Book Antiqua", serif !important;
+    font-size: 0.95em !important;
+    color: #8C7355 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    padding-bottom: 16px !important;
+}
+
+body .callout[data-callout="narration"] .callout-title:empty {
+    display: none !important;
+}
+
+/* Content: Clean, justified text for a cinematic block feel */
+body .callout[data-callout="narration"] .callout-content p {
+    font-family: "Book Antiqua", serif !important;
+    font-size: 1.05em !important;
+    line-height: 1.6 !important;
+    color: #33281E !important;
+    text-align: justify !important; 
+    margin-bottom: 12px !important;
+}
+
+body .callout[data-callout="narration"] .callout-content p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   THE MAGIC: GOTHIC DROP CAP ON FIRST LETTER
+========================================================= */
+body .callout[data-callout="narration"] .callout-content p:first-of-type::first-letter {
+    /* Uses standard OS Gothic/Blackletter fonts, falling back to your Microsoft Gothic */
+    font-family: "Hostgard Personal Use", "Old English Text MT", "Cloister Black", "Microsoft Gothic", serif !important;
+    font-size: 3em !important;
+    font-weight: normal !important;
+    float: left !important;       /* Allows the paragraph text to wrap around the big letter */
+    line-height: 1.2 !important;  /* Keeps the giant letter from pushing the first line down */
+    padding-right: 8px !important; 
+    color: #4A3A2C !important;    /* Darkened accent color */
+    text-transform: uppercase !important;
+}

@@ -1,0 +1,193 @@
+/* =========================================================
+   WIKIPEDIA INFOBOX - MINIMAL THEME BYPASS
+========================================================= */
+
+/* 1. Base Infobox Layout */
+body .callout[data-callout="wiki"] {
+    --callout-color: var(--text-normal);
+    --callout-icon: none;
+    
+    float: right;
+    clear: right;
+    width: 320px;
+    max-width: 100%;
+    margin: 0 0 1rem 1.5rem !important;
+    font-size: 0.9em;
+    
+    background-color: var(--background-secondary) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+    
+    /* Clean Word Wrap Fixes */
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    hyphens: none !important;
+}
+
+/* =========================================================
+   FORCED WORD WRAP FIX (INSIDE INFOBOX)
+========================================================= */
+body .callout[data-callout="wiki"] p,
+body .callout[data-callout="wiki"] span,
+body .callout[data-callout="wiki"] li,
+body .callout[data-callout="wiki"] td,
+body .callout[data-callout="wiki"] th {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    word-wrap: normal !important;
+    hyphens: manual !important;
+}
+
+body .callout[data-callout="wiki"] .callout-icon { 
+    display: none !important; 
+}
+
+body .callout[data-callout="wiki"] .callout-title {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: black;
+    padding: 10px;
+    text-transform: uppercase !important;
+    background-color: var(--faint-color) !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+    border-radius: var(--radius-m);
+    text-align: center;
+}
+
+/* Hardcode Wikilink Color to match the Tab */
+body .callout[data-callout="wiki"] .callout-title .internal-link {
+    color: black !important; 
+    text-decoration: none !important;
+    font-weight: inherit !important;
+    font-family: inherit !important;
+    background: none !important;
+}
+
+body .callout[data-callout="wiki"] .callout-content { 
+    padding: 12px; 
+}
+
+/* =========================================================
+   CUSTOM ADDITIONS: HEADINGS, SECTIONS, AND LABELS
+========================================================= */
+
+/* Fix 1: Strip global campaign header styles/seals from infobox headers */
+body .callout[data-callout="wiki"] h1,
+body .callout[data-callout="wiki"] h2,
+body .callout[data-callout="wiki"] h3,
+body .callout[data-callout="wiki"] h4,
+body .callout[data-callout="wiki"] h5,
+body .callout[data-callout="wiki"] h6,
+body .callout[data-callout="wiki"] .markdown-rendered h1,
+body .callout[data-callout="wiki"] .markdown-rendered h2,
+body .callout[data-callout="wiki"] .markdown-rendered h3,
+body .callout[data-callout="wiki"] .markdown-rendered h4,
+body .callout[data-callout="wiki"] .markdown-rendered h5,
+body .callout[data-callout="wiki"] .markdown-rendered h6 {
+    border-bottom: none !important;
+    padding-left: 0 !important;
+}
+
+body .callout[data-callout="wiki"] h1::before,
+body .callout[data-callout="wiki"] h2::before,
+body .callout[data-callout="wiki"] h3::before,
+body .callout[data-callout="wiki"] h4::before,
+body .callout[data-callout="wiki"] h5::before,
+body .callout[data-callout="wiki"] h6::before,
+body .callout[data-callout="wiki"] .markdown-rendered h1::before,
+body .callout[data-callout="wiki"] .markdown-rendered h2::before,
+body .callout[data-callout="wiki"] .markdown-rendered h3::before,
+body .callout[data-callout="wiki"] .markdown-rendered h4::before,
+body .callout[data-callout="wiki"] .markdown-rendered h5::before,
+body .callout[data-callout="wiki"] .markdown-rendered h6::before {
+    display: none !important;
+}
+
+/* 2. Center Heading 6 */
+body .callout[data-callout="wiki"] .callout-content h6, h5 {
+    text-align: center !important;
+    margin: -3px 0 8px 0 !important;
+    font-size: 12px !important;
+    color: var(--text-normal) !important;
+    text-transform: uppercase !important;
+}
+
+/* 3. Section Box (Triggered using ==Highlights==) */
+body .callout[data-callout="wiki"] .callout-content p:has(mark) {
+    margin: 0px 0 4px 0 !important;
+    text-align: center !important;
+    font-size: 18px;
+    text-transform: uppercase !important;
+}
+
+body .callout[data-callout="wiki"] .callout-content mark {
+    display: block !important; 
+    background-color: var(--faint-color) !important;
+    color: black !important;
+    border-radius: var(--radius-s) !important;
+    padding: 6px 10px !important;
+    font-weight: 600 !important;
+}
+
+/* =========================================================
+   IMAGES & CAPTIONS
+========================================================= */
+
+/* 6. Image Formatting */
+body .callout[data-callout="wiki"] .callout-content img {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 auto 8px auto !important;
+    border-radius: var(--radius-s) !important;
+}
+
+/* 7. Italicized Captions (Triggered using *Italics*) */
+body .callout[data-callout="wiki"] .callout-content em {
+    display: block !important;
+    text-align: center !important;
+    font-size: 0.9em !important;
+    color: var(--text-muted) !important;
+    margin-top: -4px !important;
+    margin-bottom: 12px !important;
+}
+
+/* =========================================================
+   PSEUDO-TABLE LABELS (No Markdown Tables Required)
+========================================================= */
+
+body .callout[data-callout="wiki"] .callout-content ul {
+    list-style-type: none !important; 
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+/* This turns every bullet point into a rigid 2-column grid */
+body .callout[data-callout="wiki"] .callout-content ul li {
+    display: grid !important;
+    grid-template-columns: 35% 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+    padding: 6px 8px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+/* Forces Minimal's bullet point dots to hide */
+body .callout[data-callout="wiki"] .callout-content ul li::before,
+body .callout[data-callout="wiki"] .callout-content ul li .list-bullet {
+    display: none !important; 
+}
+
+/* Styles the bold text on the left side of your line */
+body .callout[data-callout="wiki"] .callout-content ul li > strong:first-child {
+    color: var(--text-muted) !important;
+}
+
+/* Removes the bottom border from the final item */
+body .callout[data-callout="wiki"] .callout-content ul li:last-child {
+    border-bottom: none !important;
+}

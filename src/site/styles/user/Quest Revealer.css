@@ -1,0 +1,51 @@
+/* Only hide unchecked TOP-LEVEL tasks that follow another unchecked TOP-LEVEL task */
+.callout[data-callout="quest"] .callout-content > ul > li:is([data-task=" "], [data-task=""]) ~ li:is([data-task=" "], [data-task=""]) {
+    display: none;
+}
+
+/* Apply the fade animation only to the top-level tasks (prevents double-animating sub-steps) */
+.callout[data-callout="quest"] .callout-content > ul > li:is([data-task=" "], [data-task=""]) {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* If the quest has ANY unchecked tasks, hide the horizontal rule and paragraph after the list */
+.callout[data-callout="quest"]:has(li:is([data-task=" "], [data-task=""])) .callout-content > ul ~ hr,
+.callout[data-callout="quest"]:has(li:is([data-task=" "], [data-task=""])) .callout-content > ul ~ p {
+    display: none;
+}
+
+/* Optional: Add a triumphant fade-in animation for the reward when it finally appears */
+.callout[data-callout="quest"]:not(:has(li:is([data-task=" "], [data-task=""]))) .callout-content > ul ~ p {
+    animation: fadeInReward 0.8s ease-in-out;
+}
+
+@keyframes fadeInReward {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================
+   CANVAS OVERRIDES: Show everything
+   ========================================= */
+
+/* Reveal all hidden list items inside a canvas */
+.canvas-node .callout[data-callout="quest"] .callout-content > ul > li:is([data-task=" "], [data-task=""]) ~ li:is([data-task=" "], [data-task=""]) {
+    display: list-item;
+}
+
+/* Reveal the horizontal line and reward paragraph inside a canvas */
+.canvas-node .callout[data-callout="quest"]:has(li:is([data-task=" "], [data-task=""])) .callout-content > ul ~ hr,
+.canvas-node .callout[data-callout="quest"]:has(li:is([data-task=" "], [data-task=""])) .callout-content > ul ~ p {
+    display: block;
+}
+
+/* Disable the fade animations inside the canvas so it doesn't flash when you drag it around */
+.canvas-node .callout[data-callout="quest"] .callout-content > ul > li,
+.canvas-node .callout[data-callout="quest"] .callout-content > ul ~ p {
+    animation: none;
+}

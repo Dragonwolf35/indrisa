@@ -1,0 +1,23 @@
+.callout[data-callout="roll"] {--callout-color: rgb(0,184,31); --callout-icon: dices;}
+
+.callout[data-callout="idea"] {--callout-color: rgb(200,200,0); --callout-icon: lightbulb;}
+
+.callout[data-callout="desc"] {--callout-color: rgb(158,158,158); --callout-icon: scroll;}
+
+.callout[data-callout="reward"] {--callout-color: rgb(187,165,65); --callout-icon: award;}
+
+.callout[data-callout="?"] {--callout-color: rgb(255,165,0); --callout-icon: circle-ellipsis;}
+
+.callout[data-callout="twist"] {--callout-color: rgb(255,0,30); --callout-icon: circle-alert;}
+
+.callout[data-callout="backstory"] {--callout-color: rgb(0,191,255); --callout-icon: scroll-text;}
+
+.callout[data-callout="encounter"] {--callout-color: rgb(255,0,0); --callout-icon: skull;}
+
+.callout[data-callout="trap"] {--callout-color: rgb(255,0,0); --callout-icon: triangle-alert;}
+
+.callout[data-callout="doors"] {--callout-color: rgb(128,64,0); --callout-icon: door-open;}
+
+.callout[data-callout="loot"] {--callout-color: rgb(200,200,0); --callout-icon: hand-coins;}
+
+.callout[data-callout="music"] {--callout-color: rgb(88,196,220); --callout-icon: music;}

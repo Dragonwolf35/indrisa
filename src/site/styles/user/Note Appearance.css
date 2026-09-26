@@ -1,0 +1,21 @@
+/* adding "wider-note" as a cssclass to a note expands it */
+.wider-note {
+    /*Set the width of your desire here*/
+    --user-custom-width: 62rem !important;
+    /*Code for edit view*/
+    --file-line-width: var(--user-custom-width) ;
+    /*Code for live read view*/
+    --content-max-width: 100rem !important;
+    --content-base-width: var(--user-custom-width);
+}
+
+
+/* creates a frontpage banner for next session date, using a <div-class=date> CONTENT </div> */
+.date {
+  text-align: center;
+  border: 5px solid #C14343;
+  padding: 20px 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}

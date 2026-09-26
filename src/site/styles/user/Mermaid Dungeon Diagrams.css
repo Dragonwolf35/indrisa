@@ -1,0 +1,76 @@
+/* =========================================================
+   MERMAID DIAGRAM SIZING IN WIKI CALLOUT
+========================================================= */
+
+body .callout[data-callout="wiki"] .mermaid {
+    max-width: 70% !important; /* Adjust this percentage to make it larger or smaller */
+    margin: 10px auto !important; /* Centers the map horizontally */
+    display: block !important;
+}
+
+body .callout[data-callout="wiki"] .mermaid svg {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* =========================================================
+   GLOBAL MERMAID STYLE: PARCHMENT & INK
+========================================================= */
+
+/* 1. Default Node Backgrounds & Borders */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+    fill: rgba(184, 148, 86, 0.15) !important; /* Light parchment fill */
+    stroke: #8C7355 !important; /* Brown ink border */
+    stroke-width: 2px !important;
+}
+
+/* 2. Text / Typography */
+.mermaid .nodeLabel, 
+.mermaid .edgeLabel {
+    color: #33281E !important;
+    font-family: "Book Antiqua", serif !important;
+}
+/* Covers both HTML and SVG text rendering in Mermaid */
+.mermaid .nodeLabel span,
+.mermaid text > tspan {
+    color: #33281E !important;
+    fill: #33281E !important;
+}
+
+/* 3. Connecting Lines & Arrows */
+.mermaid .edgePath .path {
+    stroke: #8C7355 !important;
+    stroke-width: 2px !important;
+}
+.mermaid marker path {
+    fill: #8C7355 !important; /* Make arrowheads brown */
+    stroke: none !important;
+}
+
+/* Background behind text on a connector line */
+.mermaid .edgeLabel rect {
+    fill: var(--background-primary) !important; 
+    opacity: 0.9 !important;
+}
+
+.mermaid .edgeLabel p {
+    background-color: #DFCEB7 !important;
+}
+
+.mermaid .edgeLabel,
+.mermaid .edgeLabel span,
+.mermaid .edgeLabel p,
+.mermaid .edgeLabel foreignObject div {;
+    fill: #EBE0D1 !important; /* in case Mermaid falls back to SVG text here */
+}
+
+.block-language-mermaid svg,
+.mermaid svg,
+div.mermaid > svg {
+    display: block !important;
+    margin: 0 auto !important;
+}

@@ -1,0 +1,90 @@
+ /* =========================================================
+   UNIVERSAL CALLOUT: CORNER FRAME & BOOK ANTIQUA STYLE
+========================================================= */
+
+/* 1. Base Callout Styling: Applies to ALL callouts except custom ones */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"]) {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important; 
+    
+    background-color: var(--modern-background-primary, var(--background-primary)) !important;
+    font-family: "Book Antiqua", serif !important;
+    
+    border: none !important;
+    box-shadow: none !important;
+    padding: 5px !important;
+    margin: 25px 0px !important; 
+    overflow: visible !important; 
+}
+
+/* 2. The Custom Top-Left & Bottom-Right Borders */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"])::before,
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"])::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 30px !important;
+    height: 30px !important;
+    pointer-events: none !important;
+}
+
+/* Top-Left Border */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"])::before {
+    top: -8px !important;
+    left: -8px !important;
+    border-top: 2px solid var(--callout-color, var(--text-accent)) !important;
+    border-left: 2px solid var(--callout-color, var(--text-accent)) !important;
+}
+
+/* Bottom-Right Border */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"])::after {
+    bottom: -8px !important;
+    right: -8px !important;
+    border-bottom: 2px solid var(--callout-color, var(--text-accent)) !important;
+    border-right: 2px solid var(--callout-color, var(--text-accent)) !important;
+}
+
+/* 3. Flipping the Content to the Top */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"]) .callout-content {
+    order: 1 !important; 
+    position: relative !important;
+    z-index: 2 !important; 
+    font-size: 1.05em !important;
+    line-height: 1.6 !important;
+    font-family: "Book Antiqua", serif !important;
+    overflow: visible !important;
+    margin-bottom: 16px;
+}
+
+/* 4. Flipping the Title to the Bottom & Right-Aligning */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"]) .callout-title {
+    order: 2 !important; 
+    justify-content: flex-end !important; 
+    margin-top: -15px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    color: #000000 !important;
+    font-family: "Book Antiqua", serif !important;
+}
+
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"]) .callout-icon {
+    position: absolute !important;
+    top: 0px !important;
+    left: 5px !important;
+    width: 60px !important;
+    height: 60px !important;
+    opacity: 0.15 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--callout-color, var(--text-accent)) !important;
+}
+
+/* Forces the actual internal SVG graphic to scale to 60px */
+.callout:not([data-callout="quote"], [data-callout="narration"], [data-callout="wiki"], [data-callout="quest"], [data-callout="dm"]) .callout-icon svg {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+
+}

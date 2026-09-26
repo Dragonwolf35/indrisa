@@ -1,0 +1,58 @@
+/* ==========================================
+   5. DISPERSING HONEYCOMB MESH (GHOST LAYER)
+   ========================================== */
+
+/* 1. Ensure the parent container creates a safe zone for our background */
+.workspace-leaf-content[data-type="markdown"] .view-content {
+    position: relative !important;
+    background-color: var(--bg-main) !important;
+    z-index: 1;
+}
+
+/* 2. Strip the default backgrounds from the inner text layers so they are clear */
+.cm-editor, 
+.cm-scroller, 
+.markdown-preview-view, 
+.markdown-preview-sizer {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* 3. Create the "Ghost Layer" behind the text */
+.workspace-leaf-content[data-type="markdown"] .view-content::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    z-index: -1; 
+    pointer-events: none; 
+    
+    /* The Base Honeycomb Pattern */
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B89456' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 40px auto;
+    background-repeat: repeat;
+    
+    /* 
+       THE DISPERSION MASK 
+       Leaves the edges solid, patches out the middle, and clears the center completely.
+    */
+    -webkit-mask-image: 
+        radial-gradient(circle at center, transparent 70%, black 95%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.5 -0.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    
+    -webkit-mask-size: 100% 100%, 200px 200px;
+    -webkit-mask-repeat: no-repeat, repeat;
+    -webkit-mask-composite: source-in; 
+}
+
+/* ==========================================
+TABLE CELL BACKGROUND FIX
+   ========================================== */
+/* 
+   Strips the background image (vignette/honeycomb) from the 
+   tiny nested editors that Obsidian spawns when editing table cells.
+*/
+.cm-table-widget .cm-scroller,
+.markdown-rendered table .cm-scroller {
+    background-image: none !important;
+    background-color: transparent !important;
+}

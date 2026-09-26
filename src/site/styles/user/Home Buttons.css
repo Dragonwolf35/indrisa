@@ -1,0 +1,79 @@
+/* =========================================================
+   HOMEPAGE PILL BUTTONS
+========================================================= */
+
+/* 1. Nuke all internal wrapper positioning */
+body .hp-pill button * {
+    position: static !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. The Base Button Layout */
+body .hp-pill button {
+    position: relative !important;
+    display: inline-flex !important; /* <--- THE FIX */
+    align-items: center !important;
+    justify-content: flex-start !important; /* Strictly forces text to the left */
+    
+    min-width: 240px !important;
+    height: 48px !important;
+    
+    /* 72px left padding: creates the physical gap for the icon and dark zone */
+    padding: 0px 0px 2px 40px !important; 
+    margin: 10px 4px 10px 4px !important;
+    
+    border: none !important;
+    border-radius: 999px !important;
+    box-shadow: var(--shadow-s) !important;
+    cursor: pointer !important;
+    
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 1.2em !important;
+    text-align: center !important;
+    
+    background: linear-gradient(
+        100deg, 
+        rgba(0, 0, 0, 0.15) 0%, 
+        rgba(0, 0, 0, 0.15) 56px, 
+        transparent 57px
+    ), var(--interactive-accent) !important;
+}
+
+/* 3. Hover & Active States */
+body .hp-pill button:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(100deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 56px, transparent 57px), var(--interactive-accent-hover) !important;
+}
+body .hp-pill button:active {
+    transform: translateY(1px) !important;
+    background: linear-gradient(100deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 56px, transparent 57px), var(--interactive-accent) !important;
+}
+
+/* 4. The Icon Position */
+body .hp-pill button svg,
+body .hp-pill button .lucide {
+    position: absolute !important;
+    left: 12px !important;
+    
+    /* Centers the icon vertically based on the button height */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    
+    width: 30px !important;
+    height: 30px !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   AUTO-CENTER INLINE BUTTONS
+========================================================= */
+
+/* Centers any paragraph or div that contains a pill button */
+.markdown-rendered p:has(.hp-pill),
+.markdown-rendered div:has(.hp-pill) {
+    text-align: center !important;
+    width: 100% !important;
+}

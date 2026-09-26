@@ -1,0 +1,44 @@
+body.theme-light {
+    /* Restore the table header color and lock its hover */
+    --table-header-background: rgba(184, 148, 86, 0.45) !important;
+    --table-header-background-hover: rgba(184, 148, 86, 0.45) !important;
+
+    /* Force Obsidian's row hover variables to stay identical to base colors */
+    --table-row-background-hover: var(--table-row-background) !important;
+    --table-row-alt-background-hover: var(--table-row-alt-background) !important;
+}
+
+/* Force header text appearance */
+.markdown-rendered th {
+    color: #33281E !important; 
+    font-weight: 700 !important;
+}
+
+/* Hard-lock odd and even rows in both Reading and Live Preview modes */
+.markdown-rendered table tbody tr:nth-child(odd),
+.cm-table-widget .cm-table-widget-row:nth-child(odd) {
+    background-color: #EBE0D1 !important;
+}
+
+.markdown-rendered table tbody tr:nth-child(even),
+.cm-table-widget .cm-table-widget-row:nth-child(even) {
+    background-color: #E3D5C1 !important;
+}
+
+/* Force hover states to inherit the exact same static color */
+.markdown-rendered table tbody tr:nth-child(odd):hover td,
+.cm-table-widget .cm-table-widget-row:nth-child(odd):hover .cm-table-widget-cell {
+    background-color: #EBE0D1 !important;
+}
+
+.markdown-rendered table tbody tr:nth-child(even):hover td,
+.cm-table-widget .cm-table-widget-row:nth-child(even):hover .cm-table-widget-cell {
+    background-color: #E3D5C1 !important;
+}
+
+/* Strip the background image from nested table editors */
+.cm-table-widget .cm-scroller,
+.markdown-rendered table .cm-scroller {
+    background-image: none !important;
+    background-color: transparent !important;
+}

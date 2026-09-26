@@ -1,0 +1,15 @@
+/* =========================================================
+   READING MODE: HIDE PROPERTIES EXCEPT TAGS
+========================================================= */
+
+/* 1. Hide all property rows in Reading Mode */
+.markdown-reading-view .metadata-property {
+    display: none !important;
+}
+
+/* 2. Force the 'tags' (or 'tag') row to remain visible */
+.markdown-reading-view .metadata-property[data-property-key="tags"],
+.markdown-reading-view .metadata-property[data-property-key="tag"],
+.markdown-reading-view .metadata-property[data-property-key="dg-publish"]{
+    display: flex !important; 
+}

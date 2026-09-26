@@ -2,6 +2,10 @@
    COLOR PALETTE: AGED PARCHMENT (REVISED)
    ========================================== */
 
+body {
+    background-color: var(--bg-main) !important;
+}
+
 :root,
 body.theme-light,
 body[data-theme="light"] {

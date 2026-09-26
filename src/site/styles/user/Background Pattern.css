@@ -1,11 +1,8 @@
-/* ==========================================
-   5. DISPERSING HONEYCOMB MESH (GHOST LAYER)
-   ========================================== */
-
 /* 1. Ensure the parent container creates a safe zone for our background */
-.workspace-leaf-content[data-type="markdown"] .view-content {
+.workspace-leaf-content[data-type="markdown"] .view-content,
+.dg-page-content {
     position: relative !important;
-    background-color: var(--bg-main) !important;
+    background-color: #F4ECE1 !important; /* Using the exact hex to bypass web variable issues */
     z-index: 1;
 }
 
@@ -19,7 +16,8 @@
 }
 
 /* 3. Create the "Ghost Layer" behind the text */
-.workspace-leaf-content[data-type="markdown"] .view-content::before {
+.workspace-leaf-content[data-type="markdown"] .view-content::before,
+.dg-page-content::before {
     content: "";
     position: absolute;
     inset: 0; 
@@ -42,17 +40,4 @@
     -webkit-mask-size: 100% 100%, 200px 200px;
     -webkit-mask-repeat: no-repeat, repeat;
     -webkit-mask-composite: source-in; 
-}
-
-/* ==========================================
-TABLE CELL BACKGROUND FIX
-   ========================================== */
-/* 
-   Strips the background image (vignette/honeycomb) from the 
-   tiny nested editors that Obsidian spawns when editing table cells.
-*/
-.cm-table-widget .cm-scroller,
-.markdown-rendered table .cm-scroller {
-    background-image: none !important;
-    background-color: transparent !important;
 }

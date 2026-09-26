@@ -1,11 +1,10 @@
-/* 1. BASE BACKGROUND COLOR (The bottom-most layer) */
-body {
+/* 1. BASE BACKGROUND COLOR (Moved to HTML so it sits at the absolute bottom) */
+html {
     background-color: #F4ECE1 !important;
-    position: relative;
 }
 
-/* 2. CLEAR INNER LAYERS (Making the text containers transparent so the pattern shows through) */
-.app, .app-container, .workspace, .workspace-split, .workspace-leaf, 
+/* 2. CLEAR INNER LAYERS (Making body and text containers transparent) */
+body, .app, .app-container, .workspace, .workspace-split, .workspace-leaf, 
 .workspace-leaf-content, .view-content, .markdown-reading-view, 
 .markdown-preview-view, .publish-renderer, .dg-page-content, .page, main,
 .cm-editor, .cm-scroller, .markdown-preview-sizer {
@@ -13,13 +12,13 @@ body {
     background-image: none !important;
 }
 
-/* 3. THE HONEYCOMB GHOST LAYER (Sitting directly on top of the base background) */
+/* 3. THE HONEYCOMB GHOST LAYER */
 body::before,
 .workspace-leaf-content[data-type="markdown"] .view-content::before {
     content: "";
     position: fixed; 
     inset: 0; 
-    z-index: -1; 
+    z-index: -1; /* Now sits behind the text, but ON TOP of the HTML background */
     pointer-events: none; 
     
     /* The Base Honeycomb Pattern */

@@ -22,8 +22,8 @@ body.theme-light {
     --background-secondary: var(--bg-secondary) !important;
     --background-secondary-alt: var(--bg-alt) !important;
     --workspace-background: var(--bg-main) !important;
-    --setting-items-background: var(--bg-alt);
-    --menu-background: var(--bg-secondary);
+    --setting-items-background: var(--bg-alt) !important;
+    --menu-background: var(--bg-secondary) !important;
     --scrollbar-active-thumb-bg: rgba(184, 148, 86, 0.45) !important;
     --scrollbar-thumb-bg: rgba(184, 148, 86, 0.3) !important;
     

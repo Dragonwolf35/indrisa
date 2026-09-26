@@ -1,0 +1,7 @@
+---
+{"dg-publish":true,"permalink":"/z-planes-of-existence/inner-planes/material-realms/","tags":["Lore"],"dg-note-properties":{"tags":["Lore"]}}
+---
+
+The [[z_Planes of Existence/Inner Planes/Material Plane\|Material Plane]] is where the philosophical and elemental forces of the other planes of existence collide in the jumbled existence of mortal life and matter. It is a thoroughly magical place, reflected in the two planes that share its central place in the multiverse.
+
+The [[z_Planes of Existence/Inner Planes/Feywild\|Feywild]] and the [[z_Planes of Existence/Inner Planes/Shadowfell\|Shadowfell]] are parallel dimensions occupying the same cosmological space as the [[z_Planes of Existence/Inner Planes/Material Plane\|Material Plane]]. The landscapes of these three planes are similar, but those of the [[z_Planes of Existence/Inner Planes/Feywild\|Feywild]] are more marvellous and whimsical, while those of the [[z_Planes of Existence/Inner Planes/Shadowfell\|Shadowfell]] are more bleak and ominous. Passage between the [[z_Planes of Existence/Inner Planes/Material Plane\|Material Plane]] and these other realms is sometimes effortless, even accidental. Adventurers might enter a grove of threes on the [[z_Planes of Existence/Inner Planes/Material Plane\|Material Plane]] and suddenly find themselves in the lush, colourful forest on the [[z_Planes of Existence/Inner Planes/Feywild\|Feywild]] or a grim wood of dead trees on the [[z_Planes of Existence/Inner Planes/Shadowfell\|Shadowfell]].

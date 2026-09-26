@@ -7,4 +7,3 @@
 > 
 > Only time will tell what this place will bring. Pray to the dead gods that it will be good.
 
-hidden

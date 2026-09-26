@@ -2,6 +2,24 @@
    COLOR PALETTE: AGED PARCHMENT (REVISED)
    ========================================== */
 
+html,
+body,
+.app,
+.app-container,
+.workspace,
+.workspace-split,
+.workspace-leaf,
+.workspace-leaf-content,
+.view-content,
+.markdown-reading-view,
+.markdown-preview-view,
+.publish-renderer,
+.dg-page-content,
+.page,
+main {
+    background-color: #F4ECE1 !important;
+}
+
 body {
     background-color: var(--bg-main) !important;
 }

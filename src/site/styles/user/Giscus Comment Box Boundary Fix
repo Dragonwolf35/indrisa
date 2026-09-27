@@ -1,13 +1,17 @@
 /* ==========================================
-   GISCUS COMMENT BOX BOUNDARY FIX
+   GISCUS COMMENT BOX BOUNDARY FIX (Aggressive)
    ========================================== */
-.giscus,
-.giscus-frame {
-    width: 100% !important;
-    max-width: 100% !important;
+div.giscus,
+.giscus-container {
+    max-width: 800px !important; /* Matches standard Obsidian reading width */
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
     box-sizing: border-box !important;
     position: relative !important;
-    z-index: 2 !important; 
+    z-index: 2 !important;
 }

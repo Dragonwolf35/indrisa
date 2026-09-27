@@ -30,9 +30,4 @@ The months track the harsh, elemental shifts of the continent's seasons:
 8. **Frost:** Deep winter; blinding snows, isolation, and strict survival rationing.
 
 
-> [!dm] The Archomental Engine (Hidden Truth)
-> The Eightfold Calendar is a lie, and timekeeping is a massive engine of passive worship. Centuries ago, the 8 Archomentals overwrote reality, weaving their elemental domains directly into the fundamental perception of time.
-> 
-> Before the cataclysm, the world naturally operated on a 7-day week and a 12-month year. The Elemental Princes shattered that timeline and imposed the Eightfold system. Now, every time a merchant dates a contract for "Tideday," every time a priest schedules a festival in "Hearth," and every time a farmer complains about the rain in "Mire," they are unknowingly offering a microscopic prayer to an Elemental Prince of Evil.
-> 
-> Across millions of people over generations, this generates a continuous, insurmountable battery of divine power. The Archomentals do not need active cults or blood sacrifices to fuel their ascension, because they have tricked the entire mortal plane into praying to them every single time someone simply asks what day it is.
+

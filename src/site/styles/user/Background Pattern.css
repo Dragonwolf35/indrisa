@@ -1,74 +1,33 @@
 /* ==========================================
-   1. BASE BACKGROUND & CLEARING INNER LAYERS
+   1. GLOBAL SOLID BACKGROUND (Absolute Bottom Layer)
    ========================================== */
 html {
     background-color: #F4ECE1 !important;
 }
 
-body, .app, .app-container, .workspace, .workspace-split, .workspace-leaf, 
+/* ==========================================
+   2. CLEAR ALL INNER LAYERS (Making them glass)
+   ========================================== */
+body, 
+.app, .app-container, .workspace, .workspace-split, .workspace-leaf, 
 .workspace-leaf-content, .view-content, .markdown-reading-view, 
-.markdown-preview-view, .publish-renderer, .dg-page-content, .page, main,
-.cm-editor, .cm-scroller, .markdown-preview-sizer {
+.markdown-preview-view, .publish-renderer, .dg-page-content, .page, main, 
+article, .markdown-rendered, .dg-content, .content, .markdown-preview-sizer,
+.cm-editor, .cm-scroller {
     background-color: transparent !important;
+    background: transparent !important;
     background-image: none !important;
 }
 
-/* Ensure all text floats above the background */
-body {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-
 /* ==========================================
-   2. DIGITAL GARDEN (WEB) GHOST LAYER
-   Paints directly to the browser window behind everything
+   3. THE GHOST LAYER (The Honeycomb)
    ========================================== */
-html::before {
-    content: "" !important;
-    position: fixed !important; /* Locks to the screen */
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important; /* Forces exact width of the browser */
-    height: 100vh !important; /* Forces exact height of the browser */
-    z-index: 0 !important;
-    pointer-events: none !important;
-    
-    /* Base Honeycomb */
-    background-image: url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B89456' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E") !important;
-    background-size: 40px auto !important;
-    background-repeat: repeat !important;
-    
-    /* Dispersion Mask */
-    -webkit-mask-image: 
-        radial-gradient(circle at center, transparent 70%, black 95%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.5 -0.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E") !important;
-    mask-image: 
-        radial-gradient(circle at center, transparent 70%, black 95%),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2.5 -0.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E") !important;
-    
-    -webkit-mask-size: 100% 100%, 200px 200px !important;
-    mask-size: 100% 100%, 200px 200px !important;
-    -webkit-mask-repeat: no-repeat, repeat !important;
-    mask-repeat: no-repeat, repeat !important;
-    -webkit-mask-composite: source-in !important; 
-    mask-composite: intersect !important;
-}
-
-
-/* ==========================================
-   3. OBSIDIAN DESKTOP GHOST LAYER
-   ========================================== */
-.workspace-leaf-content[data-type="markdown"] .view-content {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
+body::before,
 .workspace-leaf-content[data-type="markdown"] .view-content::before {
     content: "" !important;
-    position: absolute !important; /* Desktop uses absolute */
+    position: fixed !important; 
     inset: 0 !important;
-    z-index: 0 !important;
+    z-index: -1 !important; /* Safely sits between HTML background and the text */
     pointer-events: none !important;
     
     /* Base Honeycomb */
@@ -93,7 +52,7 @@ html::before {
 }
 
 /* ==========================================
-   4. TABLE CELL FIX
+   4. TABLE CELL FIX (Global)
    ========================================== */
 .cm-table-widget .cm-scroller,
 .markdown-rendered table .cm-scroller {

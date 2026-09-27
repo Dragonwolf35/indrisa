@@ -3,11 +3,9 @@
 ---
 
 # Chapter 1 ― Playing the game
+Now I know there's a lot of text here and I know it sounds like a lot, but you don't play a board game without knowing the rules first.
+
 Things have changed between 2014 and 2024, and so have some of the core rules. Nothing major, but knowing the rules to the core gameplay is always step one and the bare minimum. Below is a list of chapters (and a subchapter in chapter 6), that I would like everyone to read through. The books can be found through the discord server.
-
-Once finished with the below chapters, peruse through the selected rules as shown in the sidebar on the left, under "z_Rules" — this also applies to the subfolder "Homebrew Rules". There may be some overlap here and there, this is just so the rules can always be at hand. If you find any rules you would like added, just let the DM know.
-
-I know it sounds like a lot, but you don't play a board game without knowing the rules first.
 
 # Chapter 2 ― Creating a character
 While most of the core gameplay loop hasn't changed, character creation received a massive overhaul; some classes received overhauls, others receive access to "weapon masteries", race no longer influences ability scores, instead they are governed by your background, which can now also give feats. Shit's wack. Be sure to read this chapter **thoroughly** (you can skip multi-classing tho, we'll cover that when we get there).
@@ -23,4 +21,6 @@ Now what would a character be without an origin? Simple: "boring". Your origin a
 During your adventures, magic items will be plenty, so it would be rather nice to read up on how you find them, how to know what they do, and most importantly, how to **attune** to them.
 
 # Afterwards
+Once finished with the above chapters, peruse through the selected rules as shown in the sidebar on the left, under "z_Rules" — this also applies to the subfolder "Homebrew Rules". There may be some overlap here and there, this is just so the rules can always be at hand. If you find any rules you would like added, just let the DM know.
+
 After reading the chapters above, all that's left to do for you is to read up on all the fancy new things you can do. How exciting!

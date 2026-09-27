@@ -1,7 +1,6 @@
 /* ==========================================
    COLOR PALETTE: AGED PARCHMENT (REVISED)
    ========================================== */
-
 html,
 body,
 .app,
@@ -12,11 +11,7 @@ body,
 .workspace-leaf-content,
 .view-content,
 .markdown-reading-view,
-.markdown-preview-view,
-.publish-renderer,
-.dg-page-content,
-.page,
-main {
+.markdown-preview-view {
     background-color: #F4ECE1 !important;
 }
 

@@ -1,6 +1,5 @@
-
 /* 1. BASE BACKGROUND COLOR */
-body {
+html, body {
     background-color: #F4ECE1 !important;
 }
 
@@ -13,24 +12,20 @@ body {
     background-image: none !important;
 }
 
-/* 3. ANCHOR THE CONTAINERS */
+/* 3. SET UP THE CONTAINER (No z-index here to avoid trapping the child) */
 .workspace-leaf-content[data-type="markdown"] .view-content,
 .dg-page-content {
     position: relative !important; 
-    z-index: 1 !important;
 }
 
-/* 4. THE HONEYCOMB GHOST LAYER */
+/* 4. THE HONEYCOMB GHOST LAYER - Moved forward to z-index: 0 */
 .workspace-leaf-content[data-type="markdown"] .view-content::before,
 .dg-page-content::before {
     content: "" !important;
     display: block !important;
-    position: absolute !important; /* Forces it out of flex/grid flow */
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: -1 !important; /* Pushes it strictly behind the text */
+    position: absolute !important;
+    inset: 0 !important; /* Stretches pattern cleanly to all 4 corners */
+    z-index: 0 !important; /* CRITICAL FIX: No longer negative */
     pointer-events: none !important; 
     
     /* The Base Honeycomb Pattern */
@@ -56,7 +51,14 @@ body {
     mask-composite: intersect !important;
 }
 
-/* 5. TABLE CELL FIX */
+/* 5. ELEVATE THE TEXT ABOVE THE GHOST LAYER */
+.workspace-leaf-content[data-type="markdown"] .view-content > *,
+.dg-page-content > * {
+    position: relative !important;
+    z-index: 1 !important; /* Pushes the actual markdown text safely above the honeycomb */
+}
+
+/* 6. TABLE CELL FIX */
 .cm-table-widget .cm-scroller,
 .markdown-rendered table .cm-scroller {
     background-image: none !important;

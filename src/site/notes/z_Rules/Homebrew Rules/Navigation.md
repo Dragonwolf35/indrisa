@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/z-rules/homebrew-rules/navigation/","tags":["Homebrew","Rule"],"dg-note-properties":{"tags":["Homebrew","Rule"]}}
 ---
 
-When traveling, your navigator will make a single Survival check for each seven-hex segment you cross. A successful check means you traverse the region efficiently. A failed check means you lose your way, potentially ending up in an unintended adjacent hex or wasting daylight to get back on track. You do not need to roll to spot major landmarks. If you enter a hex containing a ruin, anomaly, or dungeon, it is automatically revealed to you.
+When traveling, you do not need to roll to spot major landmarks. If you enter a hex containing a ruin, anomaly, or dungeon, it is automatically revealed to you.
 
 Once a location is discovered, you can make a Perception or Investigation check to scout the site for actionable intel. A successful search might uncover a hidden back entrance, expose an environmental hazard, or reveal enemy patrol routes. A failed search means you only see the obvious, heavily guarded approach, or you risk making noise and alerting the inhabitants.
 

@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/z-rules/homebrew-rules/navigation/","tags":["Homebrew","Rule"],"dg-note-properties":{"tags":["Homebrew","Rule"]}}
 ---
 
-When traveling, you do not need to roll to spot major landmarks. If you enter a hex containing a ruin, anomaly, or dungeon, it is automatically revealed to you.
+When traveling, the map will reveal itself in 7-hex segments, or "honeycombs". When revealed, you will only see the map itself, but not any locations or dungeons in the area. On a successful Survival check, all locations within the honeycomb will be revealed — but only as question marks. If you enter a hex containing a ruin, anomaly, or dungeon, it is automatically revealed to you.
 
 Once a location is discovered, you can make a Perception or Investigation check to scout the site for actionable intel. A successful search might uncover a hidden back entrance, expose an environmental hazard, or reveal enemy patrol routes. A failed search means you only see the obvious, heavily guarded approach, or you risk making noise and alerting the inhabitants.
 

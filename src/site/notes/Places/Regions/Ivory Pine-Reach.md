@@ -5,7 +5,7 @@
 
 > [!wiki] [[Places/Regions/Ivory Pine-Reach\|Ivory Pine-Reach]]
 > ###### Taiga Region
-> ![Arctic.jpg](/img/user/z_Pictures/z_Regions/Arctic.jpg)
+> ![Taiga.jpg](/img/user/z_Pictures/z_Regions/Taiga.jpg)
 > 
 > ==INFORMATION==
 > 
